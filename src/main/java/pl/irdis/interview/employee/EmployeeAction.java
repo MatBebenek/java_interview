@@ -39,13 +39,13 @@ public class EmployeeAction {
     @GetMapping(value = "/energy")
     public List<Employee> getAllEmployeesWithEnergyPermissions() {
         LOGGER.info("Receiving employees with energy permissions.");
-        return employeeDAO.findByEnergyPermissionsNotNull();
+        return employeeDAO.findByEnergyPermissionsNotEmpty();
     }
 
     @GetMapping(value = "/tech")
     public List<Employee> getAllEmployeesWithTechnicalPermissions() {
         LOGGER.info("Receiving employees with technical permissions.");
-        return employeeDAO.findByTechPermissionsNotNull();
+        return employeeDAO.findByTechPermissionsNotEmpty();
     }
 
     @GetMapping(value = "", params = {"lastName"})

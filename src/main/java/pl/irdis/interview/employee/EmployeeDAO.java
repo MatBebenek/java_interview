@@ -9,6 +9,6 @@ public interface EmployeeDAO extends JpaRepository<Employee,Long> {
 
     Employee findByFirstName(String firstName);
     Employee findByLastName(String lastName);
-    List<Employee> findByEnergyPermissionsNotNull();
-    List<Employee> findByTechPermissionsNotNull();
+    List<Employee> findByEnergyPermissionsNotEmpty();
+    List<Employee> findByTechPermissionsNotEmpty();
 }
